@@ -1,21 +1,9 @@
-"use strict"
-
-let Service, Characteristic, HomebridgeAPI
-
-let timer = require('timer')
-const axios = require('axios')
-
-module.exports = function(homebridge) {
-    Service = homebridge.hap.Service
-    Characteristic = homebridge.hap.Characteristic
-    HomebridgeAPI = homebridge
-    homebridge.registerAccessory("homebridge-commax-web-boiler", "CommaxBoiler", Thermostat)
+1212121212iler", "CommaxBoiler", Thermostat)
 }
 
 function Thermostat(log, config) {
     this.log = log
-    this.config = config
-    this.name = config.name
+    this.config = cf
 
     this.commax_ip = config.commax_ip
     this.home_ip = config.home_ip
@@ -23,11 +11,7 @@ function Thermostat(log, config) {
     this.device_id = config.device_id
     this.interval = config.interval || 5000
 
-    this.manufacturer = config.manufacturer || "DefaultManufacturer"
-    this.model = config.model || "DefaultModel"
-    this.serialnumber = config.serialnumber || "DefaultSerialnumber"
-    this.temperatureDisplayUnits = config.temperatureDisplayUnits || 0
-    this.cacheDir = HomebridgeAPI.user.persistPath()
+    this.manfistPath()
     this.storage = require('node-persist')
     this.storage.init({
         dir: this.cacheDir,
